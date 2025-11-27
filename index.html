@@ -1,26 +1,52 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com"> 
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <meta charset="UTF-8">
     <title>Portfolio</title>
   </head>
   <body>
+    <section class="hero">
+  <h1>Jose Avila</h1>
+  <p>Cybersecurity & Info Systems @ UTSA</p>
+</section>
     <nav>
-      <a href="index.html">Home</a>
+      <a href="index.html" class="active">Home</a>
       <a href="projects.html">Projects</a>
       <a href="about.html">About</a>
       <a href="contact.html">Contact</a>
     </nav>
 
-    <h1>Welcome to my portfolio</h1>
-    <p>Hi, I'm studying computer and information systems at the University of Texas at San Antonio.</p>
-    <p>I'm fond of IT projects and other interesting things. I'm working on stuff.</p>
+  <div class="container">
+    <h1>Welcome to my website!</h1>
+    <p>Hi, I'm studying cybersecurity and information systems at the University of Texas at San Antonio.</p>
+    <p>Here, you'll find my projects, notes, and information about myself and things I'm working on.</p>
 
+  <div class="projects">  
     <h2>Featured Projects</h2>
     <ul>
-      <li>File Organizer Bot – Python script to automate folder cleanup</li>
-      <li>Phishing Detector – Flags suspicious URLs for cybersecurity practice</li>
-    </ul>
+  <li>
+    <h3>File Organizer Bot</h3>
+    <p>Python script to automate folder cleanup</p>
+    <a href="#" class="btn">Coming Soon</a>
+  </li>
+  <li>
+    <h3>Phishing Detector</h3>
+    <p>Flags suspicious URLs for cybersecurity practice</p>
+    <a href="#" class="btn">Coming Soon</a>
+  </li>
+  <li>
+    <h3>Windows Hardening Lab</h3>
+    <p>Documented lab project focused on securing Windows systems against common threats and misconfigurations.</p>
+    <a href="https://github.com/javila64/windows-hardening-lab" class="btn">View on GitHub</a>
+  </li>
+</ul>
+
+      </div>
+    </div>
   </body>
 </html>
