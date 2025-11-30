@@ -93,7 +93,7 @@ p {
 .hero {
   background-color: #1d3557;   /* deep navy */
   color: #f1faee;              /* parchment text */
-  padding: 25px 20px;          /* reduced from 80px */
+  padding: 6px 20px;          /* reduced from 80px */
   text-align: center;
   font-family: 'Source Code Pro', monospace;
 }
@@ -111,4 +111,142 @@ p {
 }
 section:not(.hero) {
   margin: 60px 0;
+}
+.contact {
+  background-color: #1d3557;
+  color: #f1faee;
+  padding: 60px 40px;
+  text-align: center;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  margin-top: 40px;
+}
+
+.contact h2 {
+  font-family: 'Source Code Pro', monospace;
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #e63946;
+}
+
+.contact p {
+  font-size: 1.1rem;
+  margin-bottom: 30px;
+  color: #a8dadc;
+}
+
+.contact-links {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.contact-links .btn {
+  background-color: #1d3557;
+  color: #f1faee;
+  padding: 12px 24px;
+  border-radius: 6px;
+  border: 2px solid #e63946;
+  text-decoration: none;
+  font-family: 'Source Code Pro', monospace;
+  transition: all 0.3s ease;
+}
+
+.contact-links .btn:hover {
+  background-color: #e63946;
+  color: #f1faee;
+  transform: translateY(-2px);
+}
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+}
+.contact {
+  background-color: #f1faee; /* light background for contrast */
+  color: #1d3557;
+  padding: 60px 20px;
+  text-align: center;
+  margin-top: 40px;
+  border-top: 2px solid #e63946;
+}
+
+.contact h2 {
+  font-family: 'Source Code Pro', monospace;
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #e63946;
+}
+
+.contact p {
+  font-size: 1.1rem;
+  margin-bottom: 30px;
+  color: #1d3557;
+}
+
+.contact-links {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.contact-links .btn {
+  background-color: #1d3557;
+  color: #f1faee;
+  padding: 12px 24px;
+  border-radius: 6px;
+  border: 2px solid #e63946;
+  text-decoration: none;
+  font-family: 'Source Code Pro', monospace;
+  transition: all 0.3s ease;
+}
+
+.contact-links .btn:hover {
+  background-color: #e63946;
+  color: #f1faee;
+  transform: translateY(-2px);
+}
+.status {
+  text-align: center;
+  margin-top: 40px;
+  padding: 40px 20px;
+  background-color: #f1faee;
+  border-top: 2px solid #e63946;
+}
+
+.status h2 {
+  font-family: 'Source Code Pro', monospace;
+  font-size: 1.8rem;
+  color: #e63946;
+  margin-bottom: 10px;
+}
+
+.status p {
+  font-size: 1.1rem;
+  color: #1d3557;
+  margin-bottom: 20px;
+}
+.about {
+  background-color: #f1faee;
+  color: #1d3557;
+  padding: 60px 20px;
+  margin-top: 40px;
+  border-top: 2px solid #e63946;
+}
+
+.about h2 {
+  font-family: 'Source Code Pro', monospace;
+  font-size: 2rem;
+  color: #e63946;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.about p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  text-align: center;
 }
