@@ -1,76 +1,354 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
   <head>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com"> 
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-    <meta charset="UTF-8">
-    <title>Portfolio</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jose Avila |  Cybersecurity + IT</title>
+
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Optional font: JetBrains Mono (terminal vibe) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Theme tokens (edit these to reskin the whole site) -->
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              mono: ['"JetBrains Mono"', "ui-monospace", "SFMono-Regular", "Menlo", "monospace"],
+            },
+            colors: {
+              bg: "#050607",
+              panel: "#0a0d0b",
+              border: "rgba(34,197,94,0.18)", // emerald-500-ish w/ alpha
+              text: "#e7fce9",
+              muted: "rgba(231,252,233,0.72)",
+              accent: "#22c55e", // emerald-500
+              accent2: "#86efac", // emerald-200
+            },
+            boxShadow: {
+              glow: "0 0 0 1px rgba(34,197,94,0.22), 0 0 24px rgba(34,197,94,0.10)",
+            },
+          },
+        },
+      };
+    </script>
   </head>
-  <body>
-    <section class="hero">
-  <h1>Jose Avila</h1>
-  <p>Cybersecurity & Info Systems @ UTSA</p>
-</section>
-    <nav>
-      <a href="index.html" class="active">Home</a>
-      <a href="projects.html">Projects</a>
-      <a href="about.html">About</a>
-      <a href="#contact">Contact</a>
+
+  <body class="bg-bg text-text font-mono antialiased">
+    <!-- Top glow grid (subtle) -->
+    <div class="pointer-events-none fixed inset-0 opacity-[0.12]"
+      style="background-image: linear-gradient(to right, rgba(34,197,94,0.18) 1px, transparent 1px),
+             linear-gradient(to bottom, rgba(34,197,94,0.18) 1px, transparent 1px);
+             background-size: 48px 48px;">
+    </div>
+
+    <!-- Navbar -->
+    <header class="relative border-b border-[color:theme(colors.border)] bg-panel/70 backdrop-blur">
+  <div class="mx-auto max-w-6xl px-6 py-4 flex items-center justify-between">
+    <a href="#" class="flex items-center gap-2 font-semibold tracking-tight">
+      <span class="inline-flex h-2.5 w-2.5 rounded-full bg-accent shadow-[0_0_16px_rgba(34,197,94,0.6)]"></span>
+      <span>Jose Avila</span>
+    </a>
+
+    <nav class="hidden md:flex items-center gap-6 text-sm text-[color:theme(colors.muted)]">
+      <a class="hover:text-text" href="#projects">Projects</a>
+      <a class="hover:text-text" href="#skills">Skills</a>
+      <a class="hover:text-text" href="#about">About</a>
+      <a class="hover:text-text" href="#contact">Contact</a>
     </nav>
 
-  <div class="container">
-    <h1>Welcome to my website!</h1>
-    <p>Cybersecurity & Information Systems student sharing projects, labs, and what I'm learning.</p>
-    <p>I'm currently looking for both internship opportunities and part time IT support roles. If you have any openings or would like to connect, please feel free to reach out!</p>
+    <div class="flex items-center gap-3">
+      <a
+        class="hidden sm:inline-flex rounded-lg border border-[color:theme(colors.border)] bg-bg/40 px-3 py-2 text-sm hover:shadow-glow transition"
+        href="https://www.linkedin.com/in/jose-avila-tx/"
+        target="_blank"
+        rel="noreferrer"
+      >
+        LinkedIn
+      </a>
+      <a
+        class="inline-flex rounded-lg bg-accent px-3 py-2 text-sm font-semibold text-bg hover:brightness-110 transition"
+        href="https://github.com/javila64"
+        target="_blank"
+        rel="noreferrer"
+      >
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+    <main class="mx-auto max-w-6xl px-6 py-10">
+      <!-- Hero -->
 
-  <div class="projects">  
-    <h2>Featured Projects</h2>
-    <ul>
-  <li>
-    <h3>DVWA SQL Injection Lab</h3>
-    <p>Hands-on lab demonstrating SQL injection vulnerabilities using Damn Vulnerable Web Application (DVWA) in an isolated Docker environmnet.</p>
-    <a href="https://github.com/javila64/dvwa-sql-injection-lab" class="btn">View on GitHub</a>
-  </li>
-  <li>
-    <h3>Password Hashing and Authentication Demo</h3>
-    <p>A simple Python project demonstrating how plaintext password storage is insecure and how hashing and salting protects user credentials.</p>
-    <a href="https://github.com/javila64/password-hashing-demo" class="btn">View on GitHub</a>
-  </li>
-  <li>
-    <h3>Windows Hardening Lab</h3>
-    <p>Documented lab project focused on securing Windows systems against common threats and misconfigurations.</p>
-    <a href="https://github.com/javila64/windows-hardening-lab" class="btn">View on GitHub</a>
-  </li>
-</ul>
+      <p class="mt-3 text-sm text-[color:theme(colors.muted)]">
+  <span class="text-accent">jose@utsa</span>:<span class="text-accent2">~/website</span>$ cat WELCOME.txt
+</p>
+
+      <section class="py-16">
+        <div class="inline-flex items-center gap-2 rounded-full border border-[color:theme(colors.border)] bg-panel/60 px-3 py-1 text-xs text-[color:theme(colors.muted)] shadow-glow">
+          <span class="text-accent">●</span>
+          <span>Open to Cybersecurity / IT Internships</span>
+        </div>
+
+        <h1 class="mt-6 text-4xl md:text-5xl font-bold tracking-tight">
+          <span class="text-accent">[</span> Welcome! <span class="text-accent">]</span>
+        </h1>
+
+        <p class="mt-5 max-w-2xl text-[color:theme(colors.muted)] leading-relaxed">
+          UTSA Cybersecurity & Information Systems student, passionate about IT, networking and cybersecurity.
+        </p>
+
+        <div class="mt-8 flex flex-wrap gap-3">
+          <a
+            class="rounded-lg bg-accent px-5 py-3 text-sm font-semibold text-bg hover:brightness-110"
+            href="#projects"
+          >
+            View Projects
+          </a>
+          <a
+            class="rounded-lg border border-[color:theme(colors.border)] bg-panel/40 px-5 py-3 text-sm font-semibold hover:shadow-glow"
+            href="#contact"
+          >
+            Contact
+          </a>
+          <a
+            class="rounded-lg border border-[color:theme(colors.border)] bg-panel/40 px-5 py-3 text-sm font-semibold hover:shadow-glow"
+            href="#resume"
+          >
+            Resume
+          </a>
+        </div>
+
+        <!-- Quick stats -->
+        <div class="mt-10 grid grid-cols-1 sm:grid-cols-3 gap-4">
+          <div class="rounded-xl border border-[color:theme(colors.border)] bg-panel/50 p-4">
+            <p class="text-xs text-[color:theme(colors.muted)]">Focus</p>
+            <p class="mt-1 text-sm">Windows / Linux / macOS • Networking • Security </p>
+          </div>
+          <div class="rounded-xl border border-[color:theme(colors.border)] bg-panel/50 p-4">
+            <p class="text-xs text-[color:theme(colors.muted)]">Experience</p>
+            <p class="mt-1 text-sm">IT Hobbyist & Experienced Logistics Professional</p>
+          </div>
+          <div class="rounded-xl border border-[color:theme(colors.border)] bg-panel/50 p-4">
+            <p class="text-xs text-[color:theme(colors.muted)]">Tooling</p>
+            <p class="mt-1 text-sm">Windows 11 • Linux • Docker • GitHub • Wireshark</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Projects -->
+      <!-- Projects -->
+<section id="projects" class="py-16 border-t border-[color:theme(colors.border)]">
+  <div class="flex items-end justify-between gap-6">
+    <div>
+      <h2 class="text-2xl font-bold tracking-tight">
+        <span class="text-accent">$</span> Projects
+      </h2>
+      <p class="mt-2 text-[color:theme(colors.muted)]">
+      </p>
+    </div>
+
+    <a
+      class="hidden sm:inline-flex items-center gap-2 rounded-lg border border-[color:theme(colors.border)] bg-panel/40 px-3 py-2 text-sm hover:shadow-glow transition"
+      href="https://github.com/javila64"
+      target="_blank"
+      rel="noreferrer"
+    >
+      <span class="text-accent">↗</span> GitHub
+    </a>
+  </div>
+
+  <div class="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6">
+    <!-- Card -->
+    <article class="rounded-xl border border-[color:theme(colors.border)] bg-panel/55 p-6 hover:shadow-glow transition">
+      <div class="flex items-start justify-between gap-4">
+        <div>
+          <h3 class="text-lg font-semibold">Docker SQL Injection Lab</h3>
+          <p class="mt-2 text-sm text-[color:theme(colors.muted)]">
+            Vulnerable web app lab for practicing SQLi safely in Docker.
+          </p>
+        </div>
+
+        <div class="flex items-center gap-2">
+          <a class="text-[color:theme(colors.muted)] hover:text-accent2 text-sm" href="#" title="Repository">repo</a>
+        </div>
       </div>
-      <section id="about" class="about">
-  <h2>About Me</h2>
-  <p>
-    I’m currently a sophomore at the University of Texas at San Antonio, pursuing dual BBAs in 
-    <strong>Cybersecurity</strong> and <strong>Information Systems</strong>. Expected graduation: Spring 2028.
-  </p>
-  <p>
-    Some of my relevant coursework includes, <em>Principles of Management Information Systems</em>, 
-    <em>Telecommunications and Networking</em>, <em>Unlocking Cyber</em>, and <em>Business Information Systems Applications</em>.
-  </p>
-  <p>
-  In my free time I like working on personal projects and studying for certifications. Currently, I am preparing for the 
-    <strong>CompTIA Security+</strong> certification. I also enjoy working on my homelab, which I use primarily for networking and cybersecurity projects.
-  </p>
-</section>
-      <section id="contact" class="contact">
-  <h2>Contact Me</h2>
-  <p>The best way to get in contact with me is via email. Feel free to reach out for collaboration, questions, or opportunities!</p>
-  <div class="contact-links">
-    <a href="mailto:javila0916@outlook.com" class="btn">Email</a>
-    <a href="https://github.com/javila64" target="_blank" class="btn">GitHub</a>
-    <a href="https://linkedin.com/in/javila64" target="_blank" class="btn">LinkedIn</a>
-    <a href="https://utsa.joinhandshake.com/profiles/5kqudb" target="_blank" class="btn">Handshake</a>
+
+      <div class="mt-4 flex flex-wrap gap-2 text-xs">
+        <span class="rounded-md border border-[color:theme(colors.border)] bg-bg/50 px-2 py-1 text-accent2">Docker</span>
+        <span class="rounded-md border border-[color:theme(colors.border)] bg-bg/50 px-2 py-1 text-[color:theme(colors.muted)]">Web Security</span>
+      </div>
+    </article>
+
+    <article class="rounded-xl border border-[color:theme(colors.border)] bg-panel/55 p-6 hover:shadow-glow transition">
+      <div class="flex items-start justify-between gap-4">
+        <div>
+          <h3 class="text-lg font-semibold">Password Hashing & Salting Demo</h3>
+          <p class="mt-2 text-sm text-[color:theme(colors.muted)]">
+            Python demo showing safer credential storage practices.
+          </p>
+        </div>
+
+        <div class="flex items-center gap-2">
+          <a class="text-[color:theme(colors.muted)] hover:text-accent2 text-sm" href="#" title="Repository">repo</a>
+        </div>
+      </div>
+
+      <div class="mt-4 flex flex-wrap gap-2 text-xs">
+        <span class="rounded-md border border-[color:theme(colors.border)] bg-bg/50 px-2 py-1 text-accent2">Python</span>
+        <span class="rounded-md border border-[color:theme(colors.border)] bg-bg/50 px-2 py-1 text-[color:theme(colors.muted)]">Authentication</span>
+      </div>
+    </article>
+
+    <article class="rounded-xl border border-[color:theme(colors.border)] bg-panel/55 p-6 hover:shadow-glow transition">
+      <div class="flex items-start justify-between gap-4">
+        <div>
+          <h3 class="text-lg font-semibold">Windows 11 Hardening Lab</h3>
+          <p class="mt-2 text-sm text-[color:theme(colors.muted)]">
+            Baseline hardening checklist + configuration notes.
+          </p>
+        </div>
+
+        <div class="flex items-center gap-2">
+          <span class="text-[color:theme(colors.muted)]"></span>
+          <a class="text-[color:theme(colors.muted)] hover:text-accent2 text-sm" href="#" title="Repository">repo</a>
+        </div>
+      </div>
+
+      <div class="mt-4 flex flex-wrap gap-2 text-xs">
+        <span class="rounded-md border border-[color:theme(colors.border)] bg-bg/50 px-2 py-1 text-accent2">Windows</span>
+        <span class="rounded-md border border-[color:theme(colors.border)] bg-bg/50 px-2 py-1 text-[color:theme(colors.muted)]">Hardening</span>
+      </div>
+    </article>
+
+    <!-- Next -->
+    <article class="rounded-xl border border-dashed border-[color:theme(colors.border)] bg-panel/35 p-6">
+      <h3 class="text-lg font-semibold">Next lab</h3>
+      <p class="mt-2 text-sm text-[color:theme(colors.muted)]">
+        Wireshark capture analysis, AD basics, or a small SIEM demo.
+      </p>
+      <div class="mt-4 flex flex-wrap gap-2 text-xs">
+        <span class="rounded-md border border-[color:theme(colors.border)] bg-bg/50 px-2 py-1 text-[color:theme(colors.muted)]">in progress</span>
+      </div>
+    </article>
   </div>
 </section>
+
+      <!-- Skills -->
+<!-- Skills (Table) -->
+<section id="skills" class="py-16 border-t border-[color:theme(colors.border)]">
+  <h2 class="text-2xl font-bold tracking-tight">
+    <span class="text-accent">$</span> Skills
+  </h2>
+  <p class="mt-2 text-[color:theme(colors.muted)]">A quick inventory of what I use and practice.</p>
+
+  <div class="mt-8 rounded-xl border border-[color:theme(colors.border)] bg-panel/55 overflow-hidden">
+    <div class="grid grid-cols-12 gap-0 text-xs text-[color:theme(colors.muted)] border-b border-[color:theme(colors.border)] bg-bg/40">
+      <div class="col-span-4 px-4 py-3">AREA</div>
+      <div class="col-span-8 px-4 py-3">SKILLS + TOOLS</div>
     </div>
+
+    <div class="grid grid-cols-12 border-b border-[color:theme(colors.border)]">
+      <div class="col-span-4 px-4 py-4 text-accent2">Systems</div>
+      <div class="col-span-8 px-4 py-4 text-sm text-[color:theme(colors.muted)]">
+        Windows troubleshooting • Accounts & Permissions • Linux CLI • Hardware troubleshooting 
+      </div>
+    </div>
+
+    <div class="grid grid-cols-12 border-b border-[color:theme(colors.border)]">
+      <div class="col-span-4 px-4 py-4 text-accent2">Networking</div>
+      <div class="col-span-8 px-4 py-4 text-sm text-[color:theme(colors.muted)]">
+        IP/DNS/DHCP • OSI Model • SSH/HTTP/S • firewall basics • Wireshark fundamentals
+      </div>
+    </div>
+
+    <div class="grid grid-cols-12 border-b border-[color:theme(colors.border)]">
+      <div class="col-span-4 px-4 py-4 text-accent2">Security</div>
+      <div class="col-span-8 px-4 py-4 text-sm text-[color:theme(colors.muted)]">
+        baselines • least privilege • SQLi fundamentals • network security basics
+      </div>
+    </div>
+
+    <div class="grid grid-cols-12">
+      <div class="col-span-4 px-4 py-4 text-accent2">Tools / Workflow</div>
+      <div class="col-span-8 px-4 py-4 text-sm text-[color:theme(colors.muted)]">
+        Git/GitHub • Docker • VS Code • VirtualBox/VMware
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+      <!-- About -->
+      <section id="about" class="py-16 border-t border-[color:theme(colors.border)]">
+        <h2 class="text-2xl font-bold tracking-tight">
+          <span class="text-accent">$</span> About
+        </h2>
+
+        <div class="mt-8 rounded-xl border border-[color:theme(colors.border)] bg-panel/55 p-6">
+          <p class="text-sm text-[color:theme(colors.muted)] leading-relaxed">
+            I’m a UTSA student pursuing cybersecurity & information systems. I'm a passionate tech enthusiast with a strong foundation in IT fundamentals and an interest in cybersecurity. I enjoy hands-on learning through labs and projects, focusing on practical skills like networking, web app security and system security. I spend most of my free time working on personal projects, exploring new technologies, and sharpening my technical skills. My goal is to continute learning and developing my skills through real-world experience and internships.
+          </p>
+
+          <div class="mt-5 flex flex-wrap gap-2 text-xs text-[color:theme(colors.muted)]">
+            <span class="rounded-md border border-[color:theme(colors.border)] bg-bg/50 px-2 py-1">San Antonio, TX</span>
+            <span class="rounded-md border border-[color:theme(colors.border)] bg-bg/50 px-2 py-1">Open to internships and part-time work</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact -->
+      <section id="contact" class="py-16 border-t border-[color:theme(colors.border)]">
+        <h2 class="text-2xl font-bold tracking-tight">
+          <span class="text-accent">$</span> Contact
+        </h2>
+        <p class="mt-2 text-[color:theme(colors.muted)]">
+          Best way to reach me: Email or LinkedIn.
+        </p>
+
+        <div class="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6">
+          <a
+            class="rounded-xl border border-[color:theme(colors.border)] bg-panel/55 p-6 hover:shadow-glow transition"
+            href="https://www.linkedin.com/in/jose-avila-tx/"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <p class="text-sm text-[color:theme(colors.muted)]">LinkedIn</p>
+            <p class="mt-2 font-semibold text-accent2">/in/jose-avila-tx</p>
+          </a>
+
+          <a
+            class="rounded-xl border border-[color:theme(colors.border)] bg-panel/55 p-6 hover:shadow-glow transition"
+            href="mailto:youremail@example.com"
+          >
+            <p class="text-sm text-[color:theme(colors.muted)]">Email</p>
+            <p class="mt-2 font-semibold text-accent2">javila0916@outlook.com</p>
+          </a>
+        </div>
+      </section>
+
+      <footer class="py-10 border-t border-[color:theme(colors.border)] text-sm text-[color:theme(colors.muted)]">
+        <div class="flex flex-col sm:flex-row gap-3 sm:items-center sm:justify-between">
+          <p>© <span id="year"></span> Jose Avila</p>
+          <p>Built with Tailwind • Terminal theme</p>
+        </div>
+      </footer>
+    </main>
+
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
   </body>
+
+
+
 </html>
